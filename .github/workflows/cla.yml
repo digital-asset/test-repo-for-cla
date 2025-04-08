@@ -16,6 +16,14 @@ jobs:
   CLAAssistant:
     runs-on: ubuntu-latest
     steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v2
+
+      - name: "Validate JSON file"
+        run: |
+          cat signatures/version1/cla.json | jq empty
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: "CLA Assistant"
         if: (github.event.comment.body == 'recheck' || github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA') || github.event_name == 'pull_request_target'
         uses: digital-asset-archive/cla@v0.0.1
