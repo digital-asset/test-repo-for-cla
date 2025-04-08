@@ -16,12 +16,9 @@ jobs:
   CLAAssistant:
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout repository"
-        uses: actions/checkout@v2
-
       - name: "Validate JSON file"
         run: |
-          cat signatures/version1/cla.json | jq empty
+          cat signatures/signs.json | jq empty
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: "CLA Assistant"
