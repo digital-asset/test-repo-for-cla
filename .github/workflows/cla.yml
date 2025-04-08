@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "CLA Assistant"
-        if: (github.event.comment.body == 'recheck' || github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA') || github.event_name == 'pull_request_target'
+        if: (github.event.comment.body == 'recheck' || github.event.comment.body == 'I have hereby read the Digital Asset CLA and agree to its terms') || github.event_name == 'pull_request_target'
         uses: digital-asset-archive/cla-action@v0.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -29,8 +29,8 @@ jobs:
           # branch should not be protected
           branch: 'main'
           allowlist: bot*
-          custom-notsigned-prcomment: '🎉 Thank you for your contribution! It appears you have not yet signed the Agreement [DA Contributor License Agreement (CLA)](https://github.com/digital-asset/daml/blob/main/CODE_OF_CONDUCT.md), which is required for your changes to be incorporated into an Open Source Software (OSS) project. Please kindly read the and reply on a new comment with the following text to agree:'
-          custom-pr-sign-comment: 'I have hereby read the CLA and agree to its terms'
+          custom-notsigned-prcomment: '🎉 Thank you for your contribution! It appears you have not yet signed the Agreement [DA Contributor License Agreement (CLA)](https://gist.github.com/digitalasset-cla), which is required for your changes to be incorporated into an Open Source Software (OSS) project. Please kindly read the and reply on a new comment with the following text to agree:'
+          custom-pr-sign-comment: 'I have hereby read the Digital Asset CLA and agree to its terms'
           custom-allsigned-prcomment: '✅ All required contributors have signed the CLA for this PR. Thank you!'
           # Remote repository storing CLA signatures.
           remote-organization-name: digital-asset-archive
