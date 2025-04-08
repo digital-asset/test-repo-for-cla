@@ -16,6 +16,9 @@ jobs:
   CLAAssistant:
     runs-on: ubuntu-latest
     steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v2
+        
       - name: "Validate JSON file"
         run: |
           cat signatures/signs.json | jq empty
