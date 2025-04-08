@@ -34,7 +34,7 @@ jobs:
           custom-allsigned-prcomment: '✅ All required contributors have signed the CLA for this PR. Thank you!'
           # Remote repository storing CLA signatures.
           remote-organization-name: digital-asset-archive
-          remote-repository-name: cla-signature
+          remote-repository-name: cla-signatures-test
           # Branch where CLA signatures are stored.
           path-to-signatures: signature/signatures.json
 
