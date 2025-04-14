@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: "CLA Assistant"
         if: (github.event.comment.body == 'recheck' || github.event.comment.body == 'I have hereby read the Digital Asset CLA and agree to its terms') || github.event_name == 'pull_request_target'
-        uses: digital-asset-archive/cla-action@v0.0.2
+        uses: digital-asset/cla-action@v0.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_FG_DIGITAL_ASSET }}
           # the below token should have repo scope and must be manually added by you in the repository's secret
