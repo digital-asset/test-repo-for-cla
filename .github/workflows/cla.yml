@@ -20,10 +20,10 @@ jobs:
         if: (github.event.comment.body == 'recheck' || github.event.comment.body == 'I have hereby read the Digital Asset CLA and agree to its terms') || github.event_name == 'pull_request_target'
         uses: digital-asset/cla-action@v0.0.2
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_FG_DIGITAL_ASSET }}
           # the below token should have repo scope and must be manually added by you in the repository's secret
           # This token is required only if you have configured to store the signatures in a remote repository/organization
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.PAT_FG }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PAT_DACH_NY_FG }}
         with:
           path-to-document: 'https://github.com/digital-asset/daml/blob/main/CODE_OF_CONDUCT.md' # e.g. a CLA or a DCO document
           # branch should not be protected
