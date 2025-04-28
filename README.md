@@ -1,2 +1,2 @@
 # test-repo-for-cla
-1test2
+1test 2 as canton
